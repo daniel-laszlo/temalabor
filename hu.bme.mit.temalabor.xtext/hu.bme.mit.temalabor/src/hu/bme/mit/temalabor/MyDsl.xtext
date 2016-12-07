@@ -1,0 +1,12 @@
+grammar hu.bme.mit.temalabor.MyDsl with org.eclipse.xtext.xbase.Xbase
+
+generate myDsl "http://www.bme.hu/mit/temalabor/MyDsl"
+
+Domainmodel:
+    (mapdim=Mapdim) clues+=Clue*;
+
+Mapdim:
+    'mapsize' '(' (sizex=INT) ',' (sizey=INT) ')' ';';
+
+Clue:
+    'clue' (value=INT) 'at' '(' posx=INT ',' posy=INT ')' ';';
